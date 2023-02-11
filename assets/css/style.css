@@ -861,7 +861,7 @@ nav img{
     text-decoration: none;
     font-size: 18px;
     color: #003a5c;
-    text-decoration:underline;
+    text-decoration:none;
     margin-left: 10px;
 }
 
@@ -950,32 +950,51 @@ nav img{
 
 /* COVER ACTUALIDAD */
 
-.cover_actualidad{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: max-content;
-}
-
-.cover_actualidad_container{
-    margin-top: 50px;
+.container_card{
+    max-width: 80%;
+    margin: auto;
+    background: red;
     margin-bottom: 50px;
-    height: 90%;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-flow: wrap;
-    align-items: center;
+    margin-top: 50px;
+    perspective: 2000px;
 }
 
-.cover_flip{
-    height: 300px;
-    width: 250px;
-    background: violet;
-    margin: 10px;
-    box-sizing: border-box;
+.card_father{
+    margin: 20px;
+    
 }
+
+.card_father:hover .card{
+    margin: 20px;
+    transform: rotateY(180deg);
+}
+
+.card{
+    width: 350px;
+    height: 400px;
+    background: #003a5c;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 600ms;
+}
+
+.card_front,
+.card_back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.card_back{
+    transform: rotateY(180deg);
+    background: #fff;
+}
+
+
 /*******************************************************************************************************************************/
 
 
